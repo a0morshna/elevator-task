@@ -1,0 +1,45 @@
+pipeline{
+    agent any
+
+    stages{
+
+        stage('Checkout'){
+            steps{
+                chekout scm
+            }
+        }
+
+        stage('Make directory'){
+            steps{
+                sh "sudo mkdir /elevator"
+                sh "cd /elevator"
+            }
+        }
+
+        stage('Cloning Git') { 
+            steps{ 
+                sh "git init"
+                sh "sudo git clone https://github.com/a0morshna/elevator-task.git"
+            }
+        } 
+
+        stage('Install wheel'){
+            steps{
+                sh "sudo apt install -y python3-pip"
+                sh "python3 -m pip install -U wheel setuptools"
+            }
+        }
+        
+        stage('Make wheel'){
+            steps{
+                sh "python3 code/Elevator.py bdist_wheel"
+            }
+        }
+
+        stage('Set Software Repository'){
+            steps{
+                sh "conda activate code/Elevator.py"
+            }
+        }
+    }
+}
