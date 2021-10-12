@@ -26,7 +26,7 @@ pipeline{
         
         stage('Make wheel'){
             steps{
-                sh "python3 code/Elevator.py bdist_wheel"
+                sh "python3 code/Elevator.py bdist_wheel --universal"
             }
         }
 

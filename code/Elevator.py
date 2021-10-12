@@ -157,7 +157,8 @@ class ElevatorSystem():
 
     def meToGo(self):
 
-        self.destinationToGo = int(input("Where do you need to go? "))
+        self.destinationToGo = 6
+        #int(input("Where do you need to go? "))
         print("-------------")
 
         if self.destinationToGo > self.numberOfFloors:
@@ -190,13 +191,15 @@ class ElevatorSystem():
     def userToGo(self):
 
         print("The elevator is on %s floor " % self.currentElevatorFloor)
-        self.countPeople = int(input("Is anyone enter the elevator here? "))
+        self.countPeople = 0
+        #int(input("Is anyone enter the elevator here? "))
 
         if self.countPeople != 0 and self.countPeople >= 0: 
 
             for i in range(0, self.countPeople):
 
-                self.userFloorToGo = int(input("Which floor you need to go? "))
+                self.userFloorToGo = 6
+                #int(input("Which floor you need to go? "))
 
                 if self.userFloorToGo > self.currentElevatorFloor:
                     self.upList.append(self.userFloorToGo)
@@ -205,7 +208,8 @@ class ElevatorSystem():
                     self.downList.append(self.userFloorToGo)
 
 
-            self.userFloorToGo = int(input("Where do you need to go? "))
+            self.userFloorToGo = 6
+            int(input("Where do you need to go? "))
 
             if self.userFloorToGo > self.currentElevatorFloor:
                 self.upList.append(self.userFloorToGo)
@@ -312,9 +316,12 @@ class ElevatorSystem():
 
 def main():
 
-    numberOfFloors = int(input("Enter the number of floors of the building: "))
-    currentElevatorFloor = int(input("Enter the floor where is the elevator now: "))
-    myPosition = int(input("Which floor are you on? "))
+    numberOfFloors = 10
+    #int(input("Enter the number of floors of the building: "))
+    currentElevatorFloor = 8
+    #int(input("Enter the floor where is the elevator now: "))
+    myPosition = 3
+    #int(input("Which floor are you on? "))
     
     print("--------------")
 
