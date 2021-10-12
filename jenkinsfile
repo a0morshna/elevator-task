@@ -26,7 +26,7 @@ pipeline{
         stage('Cloning Git') { 
             steps{
                 sh '''
-                    if [ -z "$(ls -A /elevator)" ]
+                    if [ -z "$(ls -A /elevator/elevator-task)" ]
                     then
                         echo "Empty"
                         git init
