@@ -26,7 +26,10 @@ pipeline{
         stage('Cloning Git') { 
             steps{
                 sh '''
-                    if [ "$(ls -A /elevator2/)" ]
+                    #!/bin/bash
+
+                    DIR = "/var/lib/jenkins/jobs/cicd/workspace/elevator2"
+                    if [ "$(ls -A $DIR)" ]
                     then
                         echo "Not Empty"
                     else
