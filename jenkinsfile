@@ -28,7 +28,7 @@ pipeline{
                 sh '''
                     #!/bin/bash
 
-                    DIR = "/var/lib/jenkins/jobs/cicd/workspace/elevator2"
+                    DIR = "/elevator2"
                     if [ "$(ls -A $DIR)" ]
                     then
                         echo "Not Empty"
