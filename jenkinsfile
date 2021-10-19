@@ -26,15 +26,14 @@ pipeline{
         stage('Cloning Git') { 
             steps{
                 sh '''
-                    if [ "$(ls -A "/elevator/" 2> /dev/null)" == "" ]
+                    if [ "$(ls -A /elevator2/)" ]
                     then
+                        echo "Not Empty"
+                    else
                         echo "Empty"
                         cd elevator2
                         git init
                         git clone https://github.com/a0morshna/elevator-task.git
-
-                    else
-                        echo "Not Empty"
                     fi
                 '''
             }
