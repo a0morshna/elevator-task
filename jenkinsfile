@@ -55,8 +55,7 @@ pipeline{
         
         stage('Make wheel'){
             steps{
-                sh " cd elevator2"
-                sh "python3 /home/alex0872/elevator2/elevator-task/code/Elevator.py bdist_wheel --universal"
+                sh "python3 /var/lib/jenkins/jobs/cicd/workspace/elevator2/elevator-task/code/Elevator.py bdist_wheel --universal"
             }
         }
 
