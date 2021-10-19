@@ -59,10 +59,5 @@ pipeline{
             }
         }
 
-        stage('Set Software Repository'){
-            steps{
-                sh "conda activate code/Elevator.py"
-            }
-        }
     }
 }
