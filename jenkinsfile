@@ -73,7 +73,7 @@ pipeline{
                 exit 1
                 fi
 
-                pip3 wheel --wheel-dir=/home/alex0872m/elevator2/elevator-task/wheel-file /home/alex0872m/elevator2/elevator-task/code/Elevator.py
+                pip3 wheel --wheel-dir=/home/alex0872m/elevator2/elevator-task/wheel-file Elevator.py
                 
                 '''
             }
