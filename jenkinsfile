@@ -74,7 +74,7 @@ pipeline{
                 exit 1
                 fi
 
-                pip3 wheel -e git@github.com:a0morshna/elevator-task.git
+                pip3 wheel -e git+https://github.com/a0morshna/elevator-task.git
                 '''
             }
         }
