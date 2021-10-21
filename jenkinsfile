@@ -72,6 +72,13 @@ pipeline{
                     mkdir wheel-file
                 exit 1
                 fi
+                '''
+            }
+        }
+
+        stage('Wheel archive'){
+            steps{
+                sh '''
 
                 pip3 install check-wheel-contents
                 python3 setup.py bdist_wheel
