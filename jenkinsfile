@@ -60,8 +60,8 @@ pipeline{
                 sh '''
                 cd /home/alex0872m/elevator2/elevator-task
                 mkdir wheel-file
-                wheel pack /home/alex0872m/elevator2/elevator-task
-                #pip /home/alex0872m/elevator2/elevator-task/code/Elevator.py bdist_wheel --universal
+                pip wheel pack --wheel-dir=/home/alex0872m/elevator2/elevator-task/wheel-file/ /home/alex0872m/elevator2/elevator-task
+                
                 '''
             }
         }
