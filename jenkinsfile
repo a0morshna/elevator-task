@@ -28,8 +28,7 @@ pipeline{
                 sh '''
                     #!/bin/bash
 
-                    DIR = "/home/alex0872m/elevator2"
-                    if [ "$(ls -A $DIR)" ]
+                    if [ "$(ls -A /home/alex0872m/elevator2)" ]
                     then
                         echo "Not Empty"
                     else
