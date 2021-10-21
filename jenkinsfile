@@ -28,7 +28,7 @@ pipeline{
                 sh '''
                     #!/bin/bash
 
-                    DIR = "/elevator2"
+                    DIR = "elevator2"
                     if [ "$(ls -A $DIR)" ]
                     then
                         echo "Not Empty"
@@ -58,7 +58,7 @@ pipeline{
         
         stage('Make wheel'){
             steps{
-                sh "python3 /var/lib/jenkins/jobs/cicd/workspace/elevator2/elevator-task/code/Elevator.py bdist_wheel --universal"
+                sh "python3 elevator2/elevator-task/code/Elevator.py bdist_wheel --universal"
             }
         }
 
