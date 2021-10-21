@@ -74,10 +74,9 @@ pipeline{
                 fi
 
                 pip3 install check-wheel-contents
-                python setup.py bdist_wheel
+                python3 setup.py bdist_wheel
                 check-wheel-contents /home/alex0872m/elevator2/elevator-task/wheel-file
 
-                #pip3 wheel -e git+git@github.com:a0morshna/elevator-task
                 '''
             }
         }
