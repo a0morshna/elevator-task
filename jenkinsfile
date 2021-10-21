@@ -81,8 +81,7 @@ pipeline{
         stage('Wheel archive'){
             steps{
                 sh '''
-                python3 setup.py bdist_wheel
-                #check-wheel-contents /home/alex0872m/elevator1/elevator-task/wheel-file
+                python3 setup.py bdist_wheel -d /home/alex0872m/elevator1/elevator-task/wheel-file
                 '''
             }
         }
