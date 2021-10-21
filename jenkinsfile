@@ -58,8 +58,21 @@ pipeline{
         stage('Make wheel'){
             steps{
                 sh '''
-                cd /home/alex0872m/elevator2/elevator-task
-                mkdir wheel-file
+
+                #!/bin/bash
+                DIR="/home/alex0872m/elevator2/elevator-task/wheel-file"
+
+                if [ -d "$DIR" ]
+                then
+                    ### Take action if $DIR exists ###
+                    cd /home/alex0872m/elevator2/elevator-task/wheel-file
+                else
+                    ###  Control will jump here if $DIR does NOT exists ###
+                    cd /home/alex0872m/elevator2/elevator-task
+                    mkdir wheel-file
+                exit 1
+                fi
+
                 pip wheel pack --wheel-dir=/home/alex0872m/elevator2/elevator-task/wheel-file/ /home/alex0872m/elevator2/elevator-task
                 
                 '''
