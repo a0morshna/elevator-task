@@ -50,7 +50,6 @@ pipeline{
                         echo "No Python!"
                         sudo apt install -y python3-pip
                         sudo pip3 install wheel
-                        python3 setup.py install
                     fi
                 '''
             }
@@ -74,7 +73,7 @@ pipeline{
                 exit 1
                 fi
 
-                pip3 wheel -e git+https://github.com/a0morshna/elevator-task.git
+                pip3 wheel -e git+git@github.com:a0morshna/elevator-task.git#egg=elevator-task
                 '''
             }
         }
