@@ -49,8 +49,7 @@ pipeline{
                     then
                         echo "No Python!"
                         sudo apt install -y python3-pip
-                        sudo pip install wheel
-                        python setup.py bdist_wheel 
+                        sudo pip3 install wheel
                     fi
                 '''
             }
@@ -74,7 +73,7 @@ pipeline{
                 exit 1
                 fi
 
-                pip wheel --wheel-dir=/home/alex0872m/elevator2/elevator-task/wheel-file /home/alex0872m/elevator2/elevator-task
+                pip3 wheel --wheel-dir=/home/alex0872m/elevator2/elevator-task/wheel-file /home/alex0872m/elevator2/elevator-task
                 
                 '''
             }
