@@ -34,7 +34,6 @@ pipeline{
                     else
                         echo "Empty"
                         cd /home/alex0872m/elevator1
-                        git init
                         git clone https://github.com/a0morshna/elevator-task.git
                     fi
                 '''
