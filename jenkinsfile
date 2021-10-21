@@ -81,7 +81,7 @@ pipeline{
                 sh '''
 
                 pip3 install check-wheel-contents
-                python3 setup.py bdist_wheel sdist /home/alex0872m/elevator1/elevator-task/wheel-file
+                python3 setup.py bdist_wheel sdist
                 #check-wheel-contents /home/alex0872m/elevator1/elevator-task/wheel-file
 
                 '''
