@@ -7,16 +7,16 @@ pipeline{
             steps{
                 sh '''
                     #!/bin/bash
-                    DIR="/home/alex0872m/elevator2"
+                    DIR="/home/alex0872m/elevator1"
 
                     if [ -d "$DIR" ]
                     then
                         ### Take action if $DIR exists ###
-                        cd /home/alex0872m/elevator2
+                        cd /home/alex0872m/elevator1
                     else
                         ###  Control will jump here if $DIR does NOT exists ###
-                        mkdir elevator2
-                        cd /home/alex0872m/elevator2
+                        mkdir elevator
+                        cd /home/alex0872m/elevator1
                     exit 1
                     fi
                 '''
@@ -28,12 +28,12 @@ pipeline{
                 sh '''
                     #!/bin/bash
 
-                    if [ "$(ls -A /home/alex0872m/elevator2)" ]
+                    if [ "$(ls -A /home/alex0872m/elevator1)" ]
                     then
                         echo "Not Empty"
                     else
                         echo "Empty"
-                        cd /home/alex0872m/elevator2
+                        cd /home/alex0872m/elevator1
                         git init
                         git clone https://github.com/a0morshna/elevator-task.git
                     fi
@@ -60,22 +60,22 @@ pipeline{
                 sh '''
 
                 #!/bin/bash
-                DIR="/home/alex0872m/elevator2/elevator-task/wheel-file"
+                DIR="/home/alex0872m/elevator1/elevator-task/wheel-file"
 
                 if [ -d "$DIR" ]
                 then
                     ### Take action if $DIR exists ###
-                    cd /home/alex0872m/elevator2/elevator-task/wheel-file
+                    cd /home/alex0872m/elevator1/elevator-task/wheel-file
                 else
                     ###  Control will jump here if $DIR does NOT exists ###
-                    cd /home/alex0872m/elevator2/elevator-task
+                    cd /home/alex0872m/elevator1/elevator-task
                     mkdir wheel-file
                 exit 1
                 fi
 
                 pip3 install check-wheel-contents
                 python3 setup.py bdist_wheel
-                check-wheel-contents /home/alex0872m/elevator2/elevator-task/wheel-file
+                check-wheel-contents /home/alex0872m/elevator1/elevator-task/wheel-file
 
                 '''
             }
