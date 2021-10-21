@@ -1,0 +1,12 @@
+from setuptools import setup
+
+setup(name='elevator-task',
+    version='0.0.1',
+    description='Elevator project',
+    url='https://github.com/a0morshna/elevator-task.git',
+    author='Morshna Alexandra',
+    keywords='package',
+    packages=['elevator-task'],
+    install_requires=[],
+    include_package_data=True,
+    zip_safe=False)
