@@ -73,8 +73,7 @@ pipeline{
                 exit 1
                 fi
 
-                pip3 wheel -e /home/alex0872m/elevator2/elevator-task/code/Elevator.py
-                
+                pip3 wheel -e git@github.com:a0morshna/elevator-task.git
                 '''
             }
         }
