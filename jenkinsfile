@@ -1,16 +1,16 @@
-pipeline{
+pipeline {
     agent any
 
-    stages{
+    stages {
 
-        stage('Checkout'){
-            steps{
+        stage('Checkout') {
+            steps {
                 checkout scm 
             }
         }
 
-        stage('Install py & wheel'){
-            steps{
+        stage('Install py & wheel') {
+            steps {
                 sh '''
                     version=$(python3 --version 2>&1 | grep -Po '(?<=Python )(.+)')
                     if [ -z "$version" ]
@@ -24,35 +24,13 @@ pipeline{
                 '''
             }
         }
-        
-        stage('Make wheel'){
-            steps{
+
+        stage('Wheel archive') {
+            steps {
                 sh '''
-
-                #!/bin/bash
-                DIR="/home/alex0872m/elevator1/elevator-task/wheel-file"
-
-                if [ -d "$DIR" ]
-                then
-                    ### Take action if $DIR exists ###
-                    cd /home/alex0872m/elevator1/elevator-task/wheel-file
-                else
-                    ###  Control will jump here if $DIR does NOT exists ###
-                    cd /home/alex0872m/elevator1/elevator-task
-                    mkdir wheel-file
-                exit 1
-                fi
+                python3 setup.py bdist_wheel -d 
                 '''
             }
         }
-
-        stage('Wheel archive'){
-            steps{
-                sh '''
-                python3 setup.py bdist_wheel -d /home/alex0872m/elevator1/elevator-task/wheel-file
-                '''
-            }
-        }
-
     }
 }
