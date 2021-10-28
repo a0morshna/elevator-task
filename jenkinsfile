@@ -3,46 +3,15 @@ pipeline{
 
     stages{
 
-        stage('Make directory'){
+        stage('Checkout'){
             steps{
-                sh '''
-                    #!/bin/bash
-                    DIR="/home/alex0872m/elevator1"
-
-                    if [ -d "$DIR" ]
-                    then
-                        ### Take action if $DIR exists ###
-                        cd /home/alex0872m/elevator1
-                    else
-                        ###  Control will jump here if $DIR does NOT exists ###
-                        mkdir elevator1
-                        cd /home/alex0872m/elevator1
-                    exit 1
-                    fi
-                '''
+                checkout scm 
             }
         }
 
-        stage('Cloning Git') { 
+        stage('Install py & wheel'){
             steps{
                 sh '''
-                    #!/bin/bash
-
-                    if [ "$(ls -A /home/alex0872m/elevator1)" ]
-                    then
-                        echo "Not Empty"
-                    else
-                        echo "Empty"
-                        cd /home/alex0872m/elevator1
-                        git clone https://github.com/a0morshna/elevator-task.git
-                    fi
-                '''
-            }
-        } 
-
-        stage('Install wheel'){
-            steps{
-                sh'''
                     version=$(python3 --version 2>&1 | grep -Po '(?<=Python )(.+)')
                     if [ -z "$version" ]
                     then
