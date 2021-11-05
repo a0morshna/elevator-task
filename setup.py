@@ -6,7 +6,6 @@ setup(name='elevator-task',
     url='https://github.com/a0morshna/elevator-task.git',
     author='Morshna Alexandra',
     keywords='package',
-    packages=['elevator-task'],
     install_requires=[],
     include_package_data=True,
     zip_safe=False)
