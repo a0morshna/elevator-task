@@ -17,13 +17,23 @@ pipeline {
                     then
                         echo "No Python!"
                         sudo apt install -y python3-pip
-                        sudo pip3 install wheel
                         python3 -m pip install --upgrade pip
-                        pip3 install check-wheel-contents
                     fi
                 '''
             }
         }
+
+        stage('Install packages'){
+            steps{
+                sh '''
+                sudo apt-get update -y
+                sudo pip3 install wheel
+                sudo pip3 install check-wheel-contents
+                sudo apt-get install -y python3-setuptools
+                '''
+            }
+        }
+
 
         stage('Wheel archive') {
             steps {
