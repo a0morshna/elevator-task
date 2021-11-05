@@ -20,6 +20,7 @@ pipeline {
                         sudo pip3 install wheel
                         python3 -m pip install --upgrade pip
                         pip3 install check-wheel-contents
+                        sudo apt-get install python3-setuptools
                     fi
                 '''
             }
