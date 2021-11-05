@@ -28,7 +28,7 @@ pipeline {
         stage('Wheel archive') {
             steps {
                 sh '''
-                sudo apt-get install python3-setuptools
+                sudo apt install python3-setuptools
                 python3 setup.py -q bdist_wheel
                 python3 setup.py -q sdist
                 '''
