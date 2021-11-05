@@ -40,7 +40,7 @@ pipeline {
         stage('Wheel archive') {
             steps {
                 sh '''
-                pip install wheel
+                sudo pip3 install wheel
                 python setup.py bdist_wheel -d 
                 '''
             }
