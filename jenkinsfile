@@ -27,11 +27,9 @@ pipeline {
         stage('Install packages'){
             steps{
                 sh '''
-                sudo apt install -y python3-pip
-                python3 -m pip install --upgrade pip
-                sudo pip3 install wheel
-                sudo pip3 install check-wheel-contents
-                sudo apt-get install -y python3-setuptools
+                sudo apt install -y python-pip
+                pip install setuptools --upgrade 
+                sudo pip install wheel
                 '''
             }
         }
@@ -40,7 +38,7 @@ pipeline {
         stage('Wheel archive') {
             steps {
                 sh '''
-                python3 setup.py build bdist_wheel -d 
+                python setup.py sdist bdist_wheel
                 '''
             }
         }
