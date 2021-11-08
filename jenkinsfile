@@ -28,7 +28,7 @@ pipeline {
             steps{
                 sh '''
                 sudo apt install -y python-pip
-                sudo apt-get install python3-setuptools
+                sudo apt install -y python3-setuptools
                 sudo pip install wheel
                 '''
             }
