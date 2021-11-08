@@ -8,4 +8,5 @@ setup(name='elevator-task',
     keywords='package',
     install_requires=[],
     include_package_data=True,
+    setup_requires=['wheel'],
     zip_safe=False)

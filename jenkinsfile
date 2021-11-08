@@ -30,6 +30,7 @@ pipeline {
                 sudo apt install -y python-pip
                 sudo apt install -y python3-setuptools
                 sudo pip install wheel
+                python setup.py bdist_wheel 
                 '''
             }
         }
@@ -38,7 +39,7 @@ pipeline {
         stage('Wheel archive') {
             steps {
                 sh '''
-                python3 setup.py bdist_wheel 
+                python3 setup.py sdist bdist_wheel 
                 '''
             }
         }
