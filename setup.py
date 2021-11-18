@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(name='elevator-task',
-    version='0.0.1',
+    version='0.0.2',
     description='Elevator project',
     url='https://github.com/a0morshna/elevator-task.git',
     author='Morshna Alexandra',
