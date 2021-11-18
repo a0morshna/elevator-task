@@ -1,4 +1,4 @@
-# sheesh
+# sheesh - sheesh
 import time
 
 class ElevatorSettings():    
