@@ -45,8 +45,12 @@ pipeline {
 
         stage('Archive') {
             steps {
+                cleanWS(cleanWhenNotBuilt: false,
+                    deleteDirs: true,
+                    disableDeferredWipeout: true,
+                    notFailBuild: true)
                 archiveArtifacts artifacts: '**/*.whl', fingerprint: true, allowEmptyArchive: true, onlyIfSuccessful: true
-                buildDiscarder(logRotator(artifactNumToKeepStr: '1')) 
+
             }
         }
     }
