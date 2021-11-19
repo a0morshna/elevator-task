@@ -48,9 +48,9 @@ pipeline {
                 archiveArtifacts artifacts: '**/*.whl', fingerprint: true, allowEmptyArchive: true, onlyIfSuccessful: true
             }
             
-            options { 
-                buildDiscarder(logRotator(artifactNumToKeepStr: '1')) 
-            }
+            properties([
+                buildDiscarder(logRotator(artifactNumToKeepStr: '1')),
+            ])
         }
     }
 }
