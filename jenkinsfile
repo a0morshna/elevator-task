@@ -46,6 +46,7 @@ pipeline {
         stage('Archive') {
             steps {
                 archiveArtifacts artifacts: '**/*.whl', fingerprint: true, allowEmptyArchive: true, onlyIfSuccessful: true
+                buildDiscarder(logRotator(artifactNumToKeepStr: '1')) 
             }
         }
     }
