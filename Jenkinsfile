@@ -1,10 +1,6 @@
 pipeline {
     agent any
 
-    environment {
-        BUILD_TS = getBuildTimestamp()
-    }
-
     stages {
 
         stage('Checkout') {
@@ -49,15 +45,8 @@ pipeline {
 
         stage('Archive') {
             steps {
-                archiveArtifacts artifacts: '**/*${BUILD_TS}.whl', fingerprint: true, allowEmptyArchive: true, onlyIfSuccessful: true
+                archiveArtifacts artifacts: '**/${BUILD_TIMESTAMP}*.whl', fingerprint: true, allowEmptyArchive: true, onlyIfSuccessful: true
             }
         }
     }
-}
-
-def getBuildTimestamp() {
-    Date date = new Date()
-    buildTimestamp = date.format('yy-MM-dd_HH-mm-ss')
-    println("Generated Build Timestamp: " + buildTimestamp)
-    return buildTimestamp
 }
