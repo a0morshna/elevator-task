@@ -1,6 +1,9 @@
 pipeline {
     agent any
-
+    
+    environment{
+        timestamp=${BUILD_TIMESTAMP}
+    }
 
     stages {
 
@@ -46,7 +49,7 @@ pipeline {
 
         stage('Archive') {
             steps {
-                archiveArtifacts artifacts: '**/*.whl.${CICD_TIMESTAMP}', fingerprint: true, allowEmptyArchive: true, onlyIfSuccessful: true
+                archiveArtifacts artifacts: '**/*.whl.${timestamp}', fingerprint: true, allowEmptyArchive: true, onlyIfSuccessful: true
             }
         }
     }
