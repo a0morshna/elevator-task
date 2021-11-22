@@ -1,9 +1,8 @@
-
 pipeline {
     agent any
 
-    environment{
-        def buildTimestamp=sh(script: "echo `date +%s`", returnStdout: true).trim()
+    environment {
+        def buildTimestamp = new Date().format('dd/MM/yyyy HH:mm:ss')
     }
 
     stages {
