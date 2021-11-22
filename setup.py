@@ -1,4 +1,7 @@
 from setuptools import setup
+import datetime
+
+DATE = datetime.datetime.now()
 
 setup(name='elevator-task',
     version='0.0.2',
@@ -8,6 +11,5 @@ setup(name='elevator-task',
     keywords='package',
     install_requires=[],
     include_package_data=True,
-    classifiers=["Date::${BUILD_TIMESTAMP}"],
     setup_requires=['wheel'],
     zip_safe=False)
