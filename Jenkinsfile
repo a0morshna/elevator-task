@@ -45,7 +45,7 @@ pipeline {
 
         stage('Archive') {
             steps {
-                archiveArtifacts artifacts: '**/${BUILD_TIMESTAMP}.whl', fingerprint: true, allowEmptyArchive: true, onlyIfSuccessful: true
+                archiveArtifacts artifacts: '**/${BUILD_TIMESTAMP}_*.whl', fingerprint: true, allowEmptyArchive: true, onlyIfSuccessful: true
             }
         }
     }
