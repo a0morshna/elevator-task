@@ -1,9 +1,6 @@
 pipeline {
     agent any
 
-    options {
-      buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '1', daysToKeepStr: '', numToKeepStr: '10')
-    }
 
     stages {
 
@@ -49,7 +46,7 @@ pipeline {
 
         stage('Archive') {
             steps {
-                archiveArtifacts artifacts: '**/${timeStamp}-*.whl', fingerprint: true, allowEmptyArchive: true, onlyIfSuccessful: true
+                archiveArtifacts artifacts: '**/{1}-${timeStamp}.whl', fingerprint: true, allowEmptyArchive: true, onlyIfSuccessful: true
             }
         }
     }
