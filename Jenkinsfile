@@ -1,11 +1,9 @@
-import com.fluttr.fltrJenkinsGlobalLib
-
-def fltr
-
-def buildTimestamp
-
 pipeline {
     agent any
+
+    environment {
+        BUILD_TS = getBuildTimestamp()
+    }
 
     stages {
 
@@ -51,16 +49,15 @@ pipeline {
 
         stage('Archive') {
             steps {
-                script {
-                    fltr = new fltrJenkinsGlobalLib()
-                    buildTimestamp = fltr.buildTimestamp()
-                }
-            }
-            post {
-                success {
-                    archiveArtifacts artifacts: '**/*.whl:${buildTimestamp}', fingerprint: true, allowEmptyArchive: true, onlyIfSuccessful: true
-                }
+                archiveArtifacts artifacts: '**/*.whl:${BUILD_TS}', fingerprint: true, allowEmptyArchive: true, onlyIfSuccessful: true
             }
         }
     }
+}
+
+def getBuildTimestamp() {
+    Date date = new Date()
+    buildTimestamp = date.format('yy-MM-dd_HH-mm-ss')
+    println("Generated Build Timestamp: " + buildTimestamp)
+    return buildTimestamp
 }
