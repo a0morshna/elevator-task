@@ -2,7 +2,7 @@ pipeline {
     agent any
     
     environment{
-        timestamp="${BUILD_TIMESTAMP}"
+        timestamp = "${BUILD_TIMESTAMP}"
     }
 
     stages {
