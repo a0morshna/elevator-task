@@ -1,9 +1,11 @@
+// import
+@Library("fltrJenkinsLib")
+import com.fluttr.fltrJenkinsGlobalLib
+
+def buildTimestamp
+
 pipeline {
     agent any
-    
-    environment{
-        timestamp = "${BUILD_TIMESTAMP}"
-    }
 
     stages {
 
@@ -49,7 +51,7 @@ pipeline {
 
         stage('Archive') {
             steps {
-                archiveArtifacts artifacts: '**/*.whl.${timestamp}', fingerprint: true, allowEmptyArchive: true, onlyIfSuccessful: true
+                archiveArtifacts artifacts: '**/*.whl.${buildTimestamp}', fingerprint: true, allowEmptyArchive: true, onlyIfSuccessful: true
             }
         }
     }
