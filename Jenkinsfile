@@ -49,7 +49,7 @@ pipeline {
 
         stage('Archive') {
             steps {
-                archiveArtifacts artifacts: '**/*.whl:${BUILD_TS}', fingerprint: true, allowEmptyArchive: true, onlyIfSuccessful: true
+                archiveArtifacts artifacts: '**/*${BUILD_TS}.whl', fingerprint: true, allowEmptyArchive: true, onlyIfSuccessful: true
             }
         }
     }
