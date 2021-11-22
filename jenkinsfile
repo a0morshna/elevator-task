@@ -46,16 +46,14 @@ pipeline {
         stage('Archive') {
             steps {
                 script {
-                   def uploadSpec = {
-                        "files": [
-                            {
-                                "pattern": "(*).whl",
-                                "target": "/{*}.whl.${buildTimestamp}"
-                            }
-                        ]
-                    }
+                    fltr = new fltrJenkinsGlobalLib()
+                    buildTimestamp = fltr.buildTimestamp()
                 }
-                archiveArtifacts artifacts: '**/*.whl.${buildTimestamp}', fingerprint: true, allowEmptyArchive: true, onlyIfSuccessful: true
+            }
+            post {
+                success {
+                    archiveArtifacts artifacts: '**/*.whl:${buildTimestamp}', fingerprint: true, allowEmptyArchive: true, onlyIfSuccessful: true
+                }
             }
         }
     }
