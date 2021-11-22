@@ -1,9 +1,10 @@
-import com.fluttr.fltrJenkinsGlobalLib
-
-def buildTimestamp
 
 pipeline {
     agent any
+
+    environment{
+        def buildTimestamp=sh(script: "echo `date +%s`", returnStdout: true).trim()
+    }
 
     stages {
 
