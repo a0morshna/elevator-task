@@ -38,7 +38,7 @@ pipeline {
         stage('Wheel archive') {
             steps {
                 sh '''
-                python3 setup.py sdist bdist_wheel --tag-date=${BUILD_TIMESTAMP}
+                python3 setup.py cmd --help
                 '''
             }
         }
