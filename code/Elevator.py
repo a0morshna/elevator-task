@@ -37,7 +37,7 @@ class ElevatorSettings():
                 else:
                     print('Try another number of floors.')
                     print("Sheesh----111111")
-            
+                    print("Check")
             except Exception as e:
                 print('Failed input. ' + e.__str__())
 
