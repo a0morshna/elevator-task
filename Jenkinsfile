@@ -9,6 +9,7 @@ pipeline {
             }
         }
 
+
         stage('Install python') {
             steps {
                 sh '''
@@ -23,6 +24,7 @@ pipeline {
                 '''
             }
         }
+
 
         stage('Install packages'){
             steps{
@@ -42,6 +44,7 @@ pipeline {
                 '''
             }
         }
+
 
         stage('Archive') {
             steps {
