@@ -3,12 +3,14 @@ import time
 
 class ElevatorSettings():    
 
+
     
     def __init__(self, numberOfFloors, currentElevatorFloor, myPosition):
 
         self.numberOfFloors = numberOfFloors
         self.currentElevatorFloor = currentElevatorFloor
         self.myPosition = myPosition
+
 
         self.destinationUpList = []
         self.destinationDownList = []
@@ -38,6 +40,7 @@ class ElevatorSettings():
                     print('Try another number of floors.')
                     print("Sheesh----111111")
                     print("Check")
+                    print("cheeeeeeeeeeeeeeeeeecking")
             except Exception as e:
                 print('Failed input. ' + e.__str__())
 
