@@ -14,11 +14,13 @@ class ElevatorSettings():
 
         self.destinationUpList = []
         self.destinationDownList = []
+        
         self.downList = []
         self.upList = []
 
         self.floorToGo = 0
         self.countPeople = 0
+        
         self.destinationToGo = 0
         self.direction = 0
         self.userCurrentFloor = 0
