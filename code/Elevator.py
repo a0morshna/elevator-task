@@ -2,8 +2,6 @@
 import time
 
 class ElevatorSettings():    
-
-
     
     def __init__(self, numberOfFloors, currentElevatorFloor, myPosition):
 
@@ -31,7 +29,7 @@ class ElevatorSettings():
 
     def settingsCheck(self):
 
-        # floors count bllallalalala
+        # floors count
         while True:
 
             try:
