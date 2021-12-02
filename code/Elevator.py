@@ -34,9 +34,7 @@ class ElevatorSettings():
         # floors count bllallalalala
         while True:
 
-
             try:
-
 
                 if 1 <= self.numberOfFloors <= 100:
                     break
