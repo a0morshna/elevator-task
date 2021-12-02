@@ -4,7 +4,7 @@ import datetime
 DATE = datetime.datetime.now()
 
 setup(name='elevator-task',
-    version='0.0.6',
+    version='0.0.7',
     description='Elevator project',
     url='https://github.com/a0morshna/elevator-task.git',
     author='Morshna Alexandra',
