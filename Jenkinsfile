@@ -42,7 +42,7 @@ pipeline {
         stage('Wheel archive') {
             steps {
                 sh '''
-                sudo python3 setup.py sdist bdist_wheel -d /${BUILD_TIMESTAMP}/
+                sudo python3 setup.py sdist bdist_wheel
                 '''
             }
         }
@@ -50,7 +50,7 @@ pipeline {
 
         stage('Archive') {
             steps {
-                archiveArtifacts artifacts: "**/${BUILD_TIMESTAMP}/*.whl", fingerprint: true, allowEmptyArchive: true, onlyIfSuccessful: true
+                archiveArtifacts artifacts: "**/${BUILD_NUMBER}/*.whl", fingerprint: true, allowEmptyArchive: true, onlyIfSuccessful: true
             }
         }
     }
