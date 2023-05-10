@@ -19,7 +19,7 @@ pipeline {
                         echo "No Python!"
                         sudo apt-get update
                         sudo apt install software-properties-common
-                        sudo apt install python3.9
+                        sudo apt install python3.8
                     fi
                 '''
             }
@@ -30,6 +30,7 @@ pipeline {
             steps{
                 sh '''
                 sudo apt install -y python-pip
+                python3 -m pip install --upgrade pip
                 sudo apt install -y python3-setuptools
                 sudo pip install wheel
                 '''
