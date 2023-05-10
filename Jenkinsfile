@@ -6,7 +6,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 checkout scm
-                echo("${env.BUILD_TIMESTAMP}")
+                echo("${env.BUILD_NUMBER}")
             }
         }
 
