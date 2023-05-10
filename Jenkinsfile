@@ -41,7 +41,7 @@ pipeline {
         stage('Wheel archive') {
             steps {
                 sh '''
-                python3 setup.py sdist bdist_wheel -d /${BUILD_TIMESTAMP}/
+                sudo python3 setup.py sdist bdist_wheel -d /${BUILD_TIMESTAMP}/
                 '''
             }
         }
