@@ -50,7 +50,7 @@ pipeline {
 
         stage('Archive') {
             steps {
-                archiveArtifacts artifacts: "*.whl", fingerprint: true, allowEmptyArchive: true, onlyIfSuccessful: true
+                archiveArtifacts artifacts: "dist/*.whl", fingerprint: true, allowEmptyArchive: true, onlyIfSuccessful: true
             }
         }
     }
